@@ -75,6 +75,21 @@ const NavItems = () => {
               <Link to="/login" className="d-none d-md-block">
                 Log In
               </Link>
+
+              {/* menu toggler */}
+              <div
+                onClick={() => setMenuToggle(!menuToggle)}
+                className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              {/* social toggler */}
+              <div className="ellepsis-bar d-md-none" onClick={() => setSocialToggle(!socialToggle)}>
+                <i className="icofont-info-square"></i>
+              </div>
             </div>
           </div>
         </div>
