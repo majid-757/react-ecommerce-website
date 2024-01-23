@@ -124,7 +124,7 @@ const CategoryShowCase = () => {
               <div key={product.id} className="col">
                 <div className="course-item style-4">
                   <div className="course-inner">
-                    <div className="course-thubm">
+                    <div className="course-thumb">
                       <img src={product.imgUrl} alt="" />
                       <div className="course-category">
                         <div className="course-cate">
