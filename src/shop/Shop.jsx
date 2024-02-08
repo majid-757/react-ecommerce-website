@@ -58,7 +58,12 @@ const Shop = () => {
                   <ProductCards GridList={GridList} products={products} />
                 </div>
 
-                <Pagination />
+                <Pagination 
+                  productsPerPage={productsPerPage}
+                  totalProducts={products.length}
+                  paginate={paginate}
+                  activePage={currentPage}
+                />
               </article>
             </div>
             <div className="col-lg-4 col-12">right side</div>
