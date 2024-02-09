@@ -55,7 +55,7 @@ const Shop = () => {
 
                 {/* product cards */}
                 <div>
-                  <ProductCards GridList={GridList} products={products} />
+                  <ProductCards GridList={GridList} products={currentProducts} />
                 </div>
 
                 <Pagination 
@@ -66,7 +66,9 @@ const Shop = () => {
                 />
               </article>
             </div>
-            <div className="col-lg-4 col-12">right side</div>
+            <div className="col-lg-4 col-12">
+              
+            </div>
           </div>
         </div>
       </div>
