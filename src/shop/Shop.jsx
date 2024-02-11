@@ -3,6 +3,8 @@ import PageHeader from "../components/PageHeader";
 import Data from "../products.json";
 import ProductCards from "./ProductCards";
 import Pagination from "./Pagination";
+import Search from "./Search";
+import ShopCategory from "./ShopCategory";
 
 const showResults = "Showing 01 - 12 of 139 Results";
 
@@ -24,6 +26,19 @@ const Shop = () => {
   // function to change the current page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  // filter products based on the category
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const menuItems = [...new Set(Data.map((Val) => Val.category))];
+
+  const filterItem = (curcat) => {
+    const newItem = Data.filter((newVal) => {
+      return newVal.category === curcat;
+    });
+
+    setSelectedCategory(curcat);
+    setproducts(newItem);
   };
 
   return (
@@ -55,10 +70,13 @@ const Shop = () => {
 
                 {/* product cards */}
                 <div>
-                  <ProductCards GridList={GridList} products={currentProducts} />
+                  <ProductCards
+                    GridList={GridList}
+                    products={currentProducts}
+                  />
                 </div>
 
-                <Pagination 
+                <Pagination
                   productsPerPage={productsPerPage}
                   totalProducts={products.length}
                   paginate={paginate}
@@ -67,7 +85,16 @@ const Shop = () => {
               </article>
             </div>
             <div className="col-lg-4 col-12">
-              
+              <aside>
+                <Search products={products} GridList={GridList} />
+                <ShopCategory 
+                  filterItem={filterItem}
+                  setItem={setproducts}
+                  menuItems={menuItems}
+                  setProducts={setproducts}
+                  selectedCategory={selectedCategory}
+                />
+              </aside>
             </div>
           </div>
         </div>
