@@ -87,7 +87,7 @@ const Shop = () => {
             <div className="col-lg-4 col-12">
               <aside>
                 <Search products={products} GridList={GridList} />
-                <ShopCategory 
+                <ShopCategory
                   filterItem={filterItem}
                   setItem={setproducts}
                   menuItems={menuItems}

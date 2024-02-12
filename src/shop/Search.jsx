@@ -40,10 +40,10 @@ const Search = ({ products, GridList }) => {
                   </div>
                 </div>
                 <div className="product-content">
-                    <p>
-                        <Link to={`/shop/${product.id}`}>{product.name}</Link>
-                    </p>
-                    <h6>{product.price}</h6>
+                  <p>
+                    <Link to={`/shop/${product.id}`}>{product.name}</Link>
+                  </p>
+                  <h6>{product.price}</h6>
                 </div>
               </div>
             </Link>

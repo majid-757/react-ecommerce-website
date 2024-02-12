@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import { Link } from "react-router-dom";
 import Ratting from "../components/Ratting";
@@ -25,7 +24,7 @@ const ProductCards = ({ GridList, products }) => {
                   <i className="icofont-eye"></i>
                 </Link>
                 <a href="#">
-                    <i className="icofont-heart"></i>
+                  <i className="icofont-heart"></i>
                 </a>
                 <Link to="/cart-page">
                   <i className="icofont-cart-alt"></i>
@@ -35,18 +34,17 @@ const ProductCards = ({ GridList, products }) => {
 
             {/* product content */}
             <div className="product-content">
-                <h5>
-                    <Link to={`/shop/${product.id}`}>{product.name}</Link>
-                </h5>
-                <p className="productRating">
-                    <Ratting />
-                </p>
-                <h6>${product.price}</h6>
+              <h5>
+                <Link to={`/shop/${product.id}`}>{product.name}</Link>
+              </h5>
+              <p className="productRating">
+                <Ratting />
+              </p>
+              <h6>${product.price}</h6>
             </div>
           </div>
 
-
-            {/* list style */}
+          {/* list style */}
           <div className="product-list-item">
             {/* product images */}
             <div className="product-thumb">
@@ -60,7 +58,7 @@ const ProductCards = ({ GridList, products }) => {
                   <i className="icofont-eye"></i>
                 </Link>
                 <a href="#">
-                    <i className="icofont-heart"></i>
+                  <i className="icofont-heart"></i>
                 </a>
                 <Link to="/cart-page">
                   <i className="icofont-cart-alt"></i>
@@ -70,13 +68,13 @@ const ProductCards = ({ GridList, products }) => {
 
             {/* product content */}
             <div className="product-content">
-                <h5>
-                    <Link to={`/shop/${product.id}`}>{product.name}</Link>
-                </h5>
-                <p className="productRating">
-                    <Ratting />
-                </p>
-                <h6>${product.price}</h6>
+              <h5>
+                <Link to={`/shop/${product.id}`}>{product.name}</Link>
+              </h5>
+              <p className="productRating">
+                <Ratting />
+              </p>
+              <h6>${product.price}</h6>
             </div>
           </div>
         </div>

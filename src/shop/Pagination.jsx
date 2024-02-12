@@ -8,6 +8,7 @@ const Pagination = ({
   activePage,
 }) => {
   const pageNumbers = [];
+
   for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
     pageNumbers.push(i);
   }
@@ -53,4 +54,3 @@ const Pagination = ({
 };
 
 export default Pagination;
-// line-height
