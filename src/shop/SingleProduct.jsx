@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+import ProductDispley from "./ProductDispley";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState([]);
@@ -18,7 +19,7 @@ const SingleProduct = () => {
   }, []);
 
   const result = product.filter((p) => p.id === id);
-  console.log(result);
+  // console.log(result);
 
   return (
     <div>
@@ -71,7 +72,7 @@ const SingleProduct = () => {
                     <div className="col-md-6 col-12">
                       <div className="post-content">
                         {
-                          result.map(item => <p key={item.id}>{item.name}</p>) 
+                          result.map(item => <ProductDispley key={item.id} item={item} />) 
                         }
                       </div>
                     </div>
