@@ -65,7 +65,7 @@ const ProductDispley = ({ item }) => {
     setQuantity(1)
     setSize("Select Size")
     setColor("Select Color")
-
+    setCoupon("");
   };
 
   return (
