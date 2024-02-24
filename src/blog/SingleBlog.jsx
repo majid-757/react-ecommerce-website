@@ -1,8 +1,19 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { useState } from "react";
 import blogList from "../utilis/blogdata";
 import { useParams } from "react-router-dom";
 
 import PageHeader from "../components/PageHeader";
+import Tags from "../shop/Tags"
+import PopularPost from "../shop/PopularPost"
+
+const socialList = [
+  { link: "#", iconName: "icofont-facebook", className: "facebook" },
+  { link: "#", iconName: "icofont-twitter", className: "twitter" },
+  { link: "#", iconName: "icofont-linkedin", className: "linkedin" },
+  { link: "#", iconName: "icofont-instagram", className: "instagram" },
+  { link: "#", iconName: "icofont-pinterest", className: "pinterest" },
+];
 
 const SingleBlog = () => {
   const [blog, setBlog] = useState(blogList);
@@ -96,6 +107,7 @@ const SingleBlog = () => {
                                   <a
                                     href="https://www.aparat.com/v/FyYhP"
                                     className="video-button popup"
+                                    target="_blank"
                                   >
                                     <i className="icofont-ui-play"></i>
                                   </a>
@@ -107,9 +119,54 @@ const SingleBlog = () => {
                                   ea totam natus amet dignissimos soluta harum
                                   impedit dolor, vel ab sequi.
                                 </p>
+
+                                <div className="tags-section">
+                                  <ul className="tags lab-ul">
+                                    <li>
+                                      <a href="#">Agency</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Business</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Personal</a>
+                                    </li>
+                                  </ul>
+                                  <ul className="lab-ul social-icons">
+                                    {socialList.map((val, i) => (
+                                      <li key={i}>
+                                        <a href="#" className={val.className}>
+                                          <i className={val.iconName}></i>
+                                        </a>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
                               </div>
                             </div>
                           ))}
+                        </div>
+                      </div>
+
+                      <div className="navigations-part">
+                        <div className="left">
+                          <a href="#" className="prev">
+                            <i className="icofont-double-left"></i> Previous
+                            Blog
+                          </a>
+                          <a href="#" className="title">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Molestiae, laborum!
+                          </a>
+                        </div>
+                        <div className="right">
+                          <a href="#" className="prev">
+                            <i className="icofont-double-right"></i> Next Blog
+                          </a>
+                          <a href="#" className="title">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Molestiae, laborum!
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -117,7 +174,14 @@ const SingleBlog = () => {
                 </div>
               </article>
             </div>
-            <div className="col-lg-4 col-12">Right Side</div>
+
+
+            <div className="col-lg-4 col-12">
+              <aside>
+                <Tags />
+                <PopularPost />
+              </aside>
+            </div>
           </div>
         </div>
       </div>
