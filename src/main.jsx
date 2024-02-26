@@ -22,6 +22,7 @@ import CartPage from "./shop/CartPage.jsx";
 import SingleBlog from "./blog/SingleBlog.jsx";
 import About from "./about/About.jsx";
 import Contact from "./contactPage/Contact.jsx"
+import LoginDemo from "./components/LoginDemo.jsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />
       },
+      {
+        path: "/login",
+        element: <LoginDemo />
+      }
     ],
   },
 ]);
