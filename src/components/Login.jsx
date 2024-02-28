@@ -21,7 +21,36 @@ const Login = () => {
   const navigat = useNavigate();
   const from = location.state?.pathname || "/";
 
-  const handleLogin = (e) => {};
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    // console.log(form)
+    const email = form.email.value;
+    const password = form.password.value;
+    // console.log(email, password)
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        alert("Login seccessfully");
+        navigat(form, { replace: true });
+      })
+      .catch((error) => {
+        const errorMsg = error.message;
+        setErrorMessage("Please provide valid email & password ! ");
+      });
+  };
+
+  const handleRegister = () => {
+    signUpWithGmail()
+      .then((result) => {
+        const user = result.user;
+        navigat(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMsg = error.message;
+        setErrorMessage("Please provide valid email & password ! ");
+      });
+  };
 
   return (
     <div>
@@ -48,6 +77,14 @@ const Login = () => {
                   required
                 />
               </div>
+              {/* showing message */}
+              <div>
+                {errorMessage && (
+                  <div className="error-message text-danger mb-1">
+                    {errorMessage}
+                  </div>
+                )}
+              </div>
               <div className="form-group">
                 <div className="d-flex justify-content-between flex-wrap pt-sm-2">
                   <div className="checkgroup">
@@ -58,7 +95,7 @@ const Login = () => {
                 </div>
               </div>
 
-              <div className="checkgroup">
+              <div className="d-grid gap-2">
                 <button className="d-block lab-btn">
                   <span>{btnText}</span>
                 </button>
@@ -78,7 +115,7 @@ const Login = () => {
               <h5 className="subtitle">{socialTitle}</h5>
               <ul className="lab-ul social-icons justify-content-center">
                 <li>
-                  <button className="github">
+                  <button className="github" onClick={handleRegister}>
                     <i className="icofont-github"></i>
                   </button>
                 </li>
