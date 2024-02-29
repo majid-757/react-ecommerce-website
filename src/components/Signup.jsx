@@ -40,7 +40,7 @@ const Signup = () => {
       );
     } else {
       setErrorMessage("");
-      createUser(password, email)
+      createUser(email, password)
         .then((userCredential) => {
           const user = userCredential.user;
           alert("Account created successfully done !!!");
@@ -158,24 +158,29 @@ const Signup = () => {
 
 export default Signup;
 
-const Products = [
-  {
-    id: 1,
-    name: "galaxy A14",
-    price: 15000000,
-  },
-  {
-    id: 2,
-    name: "Motorola edge 40",
-    price: 17000000,
-  },
-  {
-    id: 3,
-    name: "Nokia 3.2",
-    price: 3000000,
-  },
-];
 
-const copiedProducts1 = Products.map((product) => product);
 
-const copiedProducts2 = Products.map((product) => ({ ...product }));
+
+
+// const Products = [
+//   {
+//     id: 1,
+//     name: "galaxy A14",
+//     price: 15000000,
+//   },
+//   {
+//     id: 2,
+//     name: "Motorola edge 40",
+//     price: 17000000,
+//   },
+//   {
+//     id: 3,
+//     name: "Nokia 3.2",
+//     price: 3000000,
+//   },
+// ];
+
+// const copiedProducts1 = Products.map((product) => product);
+
+// const copiedProducts2 = Products.map((product) => ({ ...product }));
+
